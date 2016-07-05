@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  region_id: 1
+  month_id: 1
+  quantity: 1
+  total: 1
+  pecchange: 1.5
+  marketshare: 1.5
+
+two:
+  region_id: 1
+  month_id: 1
+  quantity: 1
+  total: 1
+  pecchange: 1.5
+  marketshare: 1.5
