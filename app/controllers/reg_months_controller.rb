@@ -2,7 +2,7 @@ class RegMonthsController < ApplicationController
   before_action :set_reg_month, only: [:show, :edit, :update, :destroy]
 
   def index
-  	@reg_months = Reg_months.all
+  	#@reg_months = Reg_months.all
   end
 
   def show
