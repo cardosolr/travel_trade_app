@@ -1,17 +1,27 @@
-<%- model_class = Reg_month -%>
+<%- model_class = RegMonth -%>
 <div class="page-header">
   <h1>Travel App</h1>
 </div>
-<table class="table table-striped">
+<table class="table table-striped" border="1px">
   <thead>
     <tr>
-    <th>test</th>
+      <th></th>
+      <% @months.each do |r| %>
+        <th><%= r.name %></th>
+      <% end %>
     </tr>
   </thead>
 
-    <tbody>
+  <tbody>
+    <% @regions.each do |r| %>
       <tr>
-        <td>eita</td>
+        <td><%= r.name %></td>  
+          <% @regmonths.each do |h| %>
+            <td><%= h.quantity %></td>
+          <% end %>
+    <% end %>
       </tr>
   </tbody>
 </table>
+
+<%= link_to 'New Travel Data', new_reg_month_path %>

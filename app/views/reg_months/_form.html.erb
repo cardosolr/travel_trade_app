@@ -1,0 +1,38 @@
+<%= form_for(@regmonth) do |f| %>
+  <% if @regmonth.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@regmonth.errors.count, "error") %> prohibited this travel data from being saved:</h2>
+
+      <ul>
+      <% @regmonth.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%#= f.select :region, collection: @regions %>
+  <%#= f.select :month, collection: @months %>
+  <%= f.collection_select :region, @regions, :id, :name, :selected => @regmonth.region_id  %>
+  <%= f.collection_select :month, @months, :id, :name, :selected => @regmonth.month_id  %>
+
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :total %><br>
+    <%= f.text_field :total %>
+  </div>
+  <div class="field">
+    Percent Change<br>
+    <%= f.text_field :pecchange %>
+  </div>
+  <div class="field">
+    <%= f.label :marketshare %><br>
+    <%= f.text_field :marketshare %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
